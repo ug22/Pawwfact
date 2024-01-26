@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawwfect.inc</title>
+    
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            background-image: url('https://d.newsweek.com/en/full/2272432/better-planet-protecting-pets-banner.png');
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styles */
+        header {
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+        }
+
+        header img {
+            height: 50px;
+            margin-right: 10px;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        header img:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 1));
+        }
+
+        h1 {
+            font-size: 24px;
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.3s ease;
+            color: #FFD700;
+        }
+
+        h1:hover::before,
+        h1:hover::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 0;
+            bottom: 0;
+            background-color: #FFD700;
+            transition: width 0.3s ease;
+        }
+
+        h1:hover::before {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h1:hover::after {
+            right: 50%;
+            transform: translateX(50%);
+        }
+
+        /* Navigation styles */
+        nav {
+            padding: 10px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+            flex-grow: 1;
+        }
+
+        nav a {
+            position: relative;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+            display: inline-block;
+            border-radius: 5px;
+            cursor: pointer;
+            transform-origin: center;
+            perspective: 1000px;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #FFD700;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease, width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FFD700;
+            transform: scale(1.1);
+        }
+
+        nav a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* Suggestions button styles */
+        button#suggestions-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #FFD700;
+            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+            border-radius: 5px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-right: 20px;
+            transform-origin: center;
+            perspective: 1000px;
+        }
+
+        button#suggestions-btn:hover {
+            background-color: rgba(0, 0, 0, 1);
+            color: #FFD700;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+            transform: scale(1.1);
+        }
+
+        /* Main content styles */
+        main {
+            padding: 20px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        h2, p {
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        h2:hover, p:hover {
+            color: #FFD700;
+            transform: scale(1.05);
+        }
+
+        section {
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="D:\Pawwfect.inc website\kisspng-dog-portable-network-graphics-computer-icons-clip-updog-apk-5d018add336521.8956299515603821732105.png" alt="Logo">
+        <h1>Pawwfact.inc</h1>
+        <nav>
+            <a href="who we are.html">Who We Are</a>
+            <a href="what we do.html">What We Do</a>
+            <a href="our service.html">Our Services</a>
+            <a href="news & events.html">News & Events</a>
+            <a href="help.html">Need Help?</a>
+            
+        </nav>
+        <button id="suggestions-btn" onclick="window.location.href='suggestions.html'">Suggestions</button>
+    </header>
+
+    <main>
+        <section id="who-we-are">
+            <h2>Our Mission</h2>
+            <p>Fostering positive change in animal welfare through comprehensive medical care, rescue, adoption, and community education at Pawwfect.inc.</p>
+        </section>
+
+        <section id="what-we-do">
+            <h2>Our Services</h2>
+            <p>Delivering impactful solutions in areas such as education, healthcare, and community development.</p>
+        </section>
+
+
+        <section id="our-services">
+            <h2>Our Services</h2>
+            <p>Explore the various services we provide to make a positive impact.</p>
+        </section>
+
+        <section id="news-events">
+            <h2>Latest Updates</h2>
+            <p>Stay informed about our organization's activities, events, and achievements.</p>
+        </section>
+
+        <section id="Need Help?">
+            <h2>Get Involved</h2>
+            <p>Discover various ways you can contribute and make a meaningful difference in our initiatives.</p>
+        </section>
+    </main>
+
+    <footer>
+        <!-- No "Professional Organization" line here -->
+    </footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha384-GLhlTQ8iK7ZLlM/0fiRx/uZjNlU4Ys1b6dbStH5paF5PA2M66ENtiQ1M1JQshoN" crossorigin="anonymous">
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

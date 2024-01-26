@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Pawwfect</title>
+
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Feather Icons CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+                url('https://png.pngtree.com/thumb_back/fh260/background/20220216/pngtree-dog-phone-telephone-professional-ring-pet-photo-image_35197196.jpg'); /* Gradient overlay and background image */
+            background-size: cover;
+            opacity: 0.2; /* Adjusted opacity for better text visibility */
+            pointer-events: none;
+        }
+
+        header {
+            background-color: #87CEFA; /* Light blue background */
+            color: #ffffff;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeInDown 2s forwards, subtleShadow 2s forwards; /* Added fade-in-down animation and subtle shadow */
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes subtleShadow {
+            from {
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            }
+            to {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeInUp 2s forwards; /* Added fade-in-up animation */
+            transition: color 0.3s ease;
+        }
+
+        h1:hover {
+            color: #ffcc00; /* Change the color on hover */
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav {
+            background-color: #007BFF;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; /* Added margin-top for separation from header */
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 0 20px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffcc00; /* Change the color on hover */
+        }
+
+        .contact-section {
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque background */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeInUp 2s 1s forwards, subtleBoxShadow 2s 1s forwards; /* Added delay to fade-in-up animation and subtle box shadow */
+            transition: box-shadow 0.3s ease; /* Added transition on box shadow */
+        }
+
+        .contact-section:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Increased box shadow on hover */
+            transform: translateY(-8px); /* Move up on hover */
+        }
+
+        @keyframes subtleBoxShadow {
+            from {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            to {
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        .contact-form {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            color: #007BFF;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .contact-form button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            margin-top: auto;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        /* Home Tab Styles */
+        .home-tab {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 2;
+            opacity: 1;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Added transitions */
+            animation: bounce 1s infinite alternate; /* Added bounce animation */
+            display: flex;
+            align-items: center;
+        }
+
+        .home-tab:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added box shadow on hover */
+            transform: scale(1.1); /* Added scale transform on hover */
+        }
+
+        .home-tab a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        @keyframes bounce {
+            to {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parallax-bg"></div>
+
+    <header>
+        <h1>Welcome to Pawwfect</h1>
+        <p>Join us in making a difference in the lives of street dogs and pets! Pawwfect is a passionate organization dedicated to rescuing and providing a better life for street dogs and other pets in need. Our mission is to create a world where every animal has a loving home and a chance for a happy, healthy life.</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="news & events.html">News and Updates</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Have questions or want to get in touch? Fill out the form below, and we'll get back to you as soon as possible.</p>
+
+        <!-- Contact Form -->
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+            <input type="hidden" name="access_key" value="ddf07aff-1262-4e03-8473-0c95a247dbb5">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="How Can We Help You?" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Home Tab -->
+    <div class="home-tab" onclick="scrollToTop()">
+        <a href="index.html" style="text-decoration: none; color: #fff;">Home</a> <!-- Removed underline effect on hover -->
+    </div>
+
+    <script>
+        // Parallax Effect Script
+        window.addEventListener('scroll', function () {
+            const scrolled = window.scrollY;
+            document.querySelector('.parallax-bg').style.transform = `translateY(-${scrolled * 0.5}px)`;
+        });
+
+        // Feather Icons Script
+        feather.replace();
+
+        // Scroll to Top Function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+
+</html>

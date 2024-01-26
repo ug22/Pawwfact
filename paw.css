@@ -1,0 +1,34 @@
+body {
+    background-image: url('https://assets-global.website-files.com/627a5f477d5ec9079c88f0e2/6453a3ec08938b55ea4ae459_How%20a%20pet%20website%20doubled%20traffic.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contact-container {
+    display: flex;
+   
+    width: 80%;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.contact-right {
+    width: 50%;
+    padding: 100px;
+    box-sizing: border-box;
+}
+
+.contact-right:hover {
+    background-color: rgba(255, 255, 255, 0.9); /* Adjust the background color on hover */
+}
+

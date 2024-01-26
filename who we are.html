@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Pawwfect</title>
+
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Feather Icons CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: url('https://i.imgur.com/B7szX41.png'); /* Smoky background image */
+            background-size: cover;
+            opacity: 0.2; /* Adjusted opacity for better text visibility */
+            pointer-events: none;
+        }
+
+        .parallax-bg {
+            background-image: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsX29mZmljZV80Nl9ncnVuZ2VfdGV4dHVyZV9iYWNrZ3JvdW5kX29mX3N0cmF5X2RvZ3NfbWluaV9lNTc0ZjdlYi01ZDU0LTRiOTUtODgwZC1jMDJkNTY5OGM1N2VfMS5qcGc.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            filter: brightness(50%); /* Adjusted brightness for better text visibility */
+        }
+
+        header {
+            background-color: transparent;
+            color: #ffffff;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeInDown 2s forwards, subtleShadow 2s forwards; /* Added fade-in-down animation and subtle shadow */
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes subtleShadow {
+            from {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            to {
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeInUp 2s forwards; /* Added fade-in-up animation */
+            transition: color 0.3s ease;
+        }
+
+        h1:hover {
+            color: #ffcc00; /* Change the color on hover */
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #f0f0f0;
+            opacity: 0;
+            animation: fadeInUp 2s 0.5s forwards; /* Added delay to fade-in-up animation */
+        }
+
+        .about-section {
+            padding: 20px;
+            background-color: transparent; /* Changed background color to transparent */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeInUp 2s 1s forwards, subtleBoxShadow 2s 1s forwards; /* Added delay to fade-in-up animation and subtle box shadow */
+            transition: box-shadow 0.3s ease; /* Added transition on box shadow */
+        }
+
+        .about-section:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Added box shadow on hover */
+            transform: translateY(-5px); /* Move up on hover */
+        }
+
+        @keyframes subtleBoxShadow {
+            from {
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            to {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        .social-icons {
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeIn 2s 1.5s forwards; /* Added delay to fade-in animation */
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 15px;
+            font-size: 1.8em;
+            color: #333;
+            transition: color 0.3s ease, transform 0.3s ease; /* Added transition on color and transform */
+            opacity: 0.7; /* Reduced opacity by default */
+            animation: fadeIn 2s 1.8s forwards; /* Added delay to fade-in animation */
+        }
+
+        .social-icons a:hover {
+            color: #007BFF;
+            transform: scale(1.2);
+            opacity: 1; /* Fully visible on hover */
+            transition: color 0.3s ease, transform 0.3s ease, opacity 0.3s ease; /* Added opacity transition on hover effect */
+        }
+
+        /* Home Tab Styles */
+        .home-tab {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 2;
+            opacity: 1;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Added transitions */
+            animation: bounce 1s infinite alternate; /* Added bounce animation */
+            display: flex;
+            align-items: center;
+        }
+
+        .home-tab:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added box shadow on hover */
+            transform: scale(1.1); /* Added scale transform on hover */
+        }
+
+        .home-tab a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        @keyframes bounce {
+            to {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parallax-bg"></div>
+
+    <header>
+        <h1>Welcome to Pawwfect</h1>
+        <p>Join us in making a difference in the lives of street dogs and pets! Pawwfect is a passionate organization dedicated to rescuing and providing a better life for street dogs and other pets in need. Our mission is to create a world where every animal has a loving home and a chance for a happy, healthy life.</p>
+    </header>
+
+    <div class="about-section">
+        <h2 style="color: whitesmoke;">About Us</h2> <!-- Changed font color to blue -->
+        <p>Pawwfect, is an organization committed to the well-being of animals. Our team of dedicated professionals and volunteers work tirelessly to rescue, rehabilitate, and find loving homes for street dogs and pets in need.</p>
+
+        <p>With a focus on compassion and community, Pawwfect strives to create a world where every animal receives the care and love they deserve. Our efforts extend beyond rescue missions; we actively engage in community outreach and education programs to promote responsible pet ownership and animal welfare.</p>
+
+        <p>By supporting Pawwfect, you become a part of our mission to build a compassionate society for our furry friends. Together, let's make a lasting impact on the lives of these animals and create a future where every wagging tail signifies happiness and hope.</p>
+    </div>
+
+    <div class="social-icons">
+        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <!-- Home Tab -->
+    <div class="home-tab" onclick="scrollToTop()">
+        <a href="index.html" style="text-decoration: none; color: #fff;">Home</a> <!-- Removed underline effect on hover -->
+    </div>
+
+    <script>
+        // Parallax Effect Script
+        window.addEventListener('scroll', function () {
+            const scrolled = window.scrollY;
+            document.querySelector('.parallax-bg').style.transform = `translateY(-${scrolled * 0.5}px)`;
+        });
+
+        // Feather Icons Script
+        feather.replace();
+
+        // Scroll to Top Function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+
+</html>
